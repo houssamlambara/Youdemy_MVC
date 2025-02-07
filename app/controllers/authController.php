@@ -10,5 +10,8 @@ class AuthController extends BaseController {
         $this->userModel = new User(null, null, null, null, null);
     }
 
+    public function index(){
+        require_once __DIR__ . '/../views/login/signup.php';
+    }
 
 }
