@@ -1,22 +1,22 @@
 <?php
 
-require_once './app/config/database.php';
-require_once './core/BaseController.php';
-require_once './core/Router.php';
-require_once './core/Route.php';
-require_once './app/controllers/UserController.php';
-require_once './app/controllers/AuthController.php';
-require_once './app/controllers/AdminController.php';
-require_once './app/controllers/StudentController.php';
-require_once './app/controllers/TeacherController.php';
+require_once '../app/config/database.php';
+require_once '../core/BaseController.php';
+require_once '../core/Router.php';
+require_once '../core/Route.php';
+require_once '../app/controllers/UserController.php';
+require_once '../app/controllers/AuthController.php';
+require_once '../app/controllers/AdminController.php';
+require_once '../app/controllers/StudentController.php';
+require_once '../app/views/front_end/index.php';
 
 session_start();
 
-$router = new Router();
-Route::setRouter($router);
+$router = new Router($_GET['url']);
 
 // Pages principales
-Route::get('/', [UserController::class, 'index']);
+$router->get('/', [AuthController::class, 'index']);
+Route::get('/index', [AuthController::class, 'index']);
 
 // Routes d'authentification
 Route::get('/login', [AuthController::class, 'showLoginForm']);
@@ -26,6 +26,7 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
 // Routes admin
+
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard']);
 Route::get('/admin/pending-teachers', [AdminController::class, 'pending']);
 Route::get('/admin/courses', [AdminController::class, 'courses']);

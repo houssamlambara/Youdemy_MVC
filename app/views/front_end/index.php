@@ -17,7 +17,7 @@
                 <span class="self-center text-2xl font-bold text-indigo-600">Youdemy</span>
             </a>
             <div class="flex md:order-2 space-x-3">
-                <a href="./login/signin.php" class="text-white bg-indigo-600 hover:bg-indigo-700 font-medium rounded-lg text-sm px-4 py-2">
+                <a href="http://localhost/youdemy_mvc/AuthController/index" class="text-white bg-indigo-600 hover:bg-indigo-700 font-medium rounded-lg text-sm px-4 py-2">
                     Connexion
                 </a>
                 <a href="./login/signup.php" class="text-indigo-600 bg-white hover:bg-indigo-50 hover:text-indigo-700 font-medium rounded-lg text-sm px-4 py-2 border border-indigo-600">

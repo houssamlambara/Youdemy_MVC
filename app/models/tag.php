@@ -1,6 +1,6 @@
 <?php
 
-include_once('database.php');
+require_once __DIR__ .'/../config/database.php';
 
 // class tag implements JsonSerializable
 // {
